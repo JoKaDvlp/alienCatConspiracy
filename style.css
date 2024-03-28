@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+/*
+font-family: 'Kalam', cursive;
+font-family: 'Roboto', sans-serif;
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary1:#313866;
+    --primary2:#504099;
+    --primary3:#974EC3;
+    --primary4:#FE7BE5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* GENERAL */
+
+.index {
+    background-image: url(assets/banniere.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--primary1);
+
+}
+
+h1, h2 , h3, .boutton {
+    font-family: 'Kalam', cursive;
+    color: white;
+}
+
+h1 {
+    font-size: 7rem;
+    text-align: center;
+    line-height: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 2.2rem;
+}
+
+p, a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:active, :link, :visited {
+    color: white;
+}
+
+a:hover {
+    color: #FE7BE5;
+}
+
+.bouton {
+    font-family: 'Kalam', cursive;
+    font-size: 3rem;
+    color: white;
+    background-color: #313866;
+    padding: 5px 30px;
+    border-radius: 10px;
+    cursor: url('assets/curseur.png') 50 50, pointer;
+    transition: all 0.2s ease;
+    border: 2px solid var(--primary4);
+}
+
+.bouton:hover {
+    background-color: #FE7BE5;
+    color: white;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background-image: url(assets/icon-ufo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.2s linear;
+}
+
+.logo:hover {
+    background-image: url(assets/logo-switch.png);
+}
+
+ul {
+    list-style: none;
+    gap: 30px;
+}
+
+.padding {
+    padding: 5% 10%;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justifyBetween {
+    justify-content: space-between;
+}
+
+.alignCenter {
+    align-items: center;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.rowReverse {
+    flex-direction: row-reverse;
+}
+
+/* HEADER */
+
+header {
+    padding: 0 5%;
+    height: 10vh;
+    background-color:#313866;
+    box-shadow: 0 10px 10px #313866;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+header a {
+    width: 4%;
+}
+
+header img {
+    width: 100%;
+}
+
+header nav{
+    display: flex;
+}
+
+/* Nav Burger */
+
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+    height: 3em;
+  /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+.burger-none{
+    display: none;
+}
+
+.nav-burger{
+    position: fixed;
+    top: 10vh;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--primary1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+.nav-burger ul{
+    flex-direction: column;
+    gap: 20px;
+}
+.burger-open{
+    transform: translateY(0);
+}
+
+/* HERO */
+
+.hero {
+    height: 90vh;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.hero div {
+    width: 80%;
+    gap: 50px;
+    align-content: space-between;
+    padding-top: 7%;
+}
+
+/* navDroite */
+
+.navDroite {
+    position: fixed;
+    top: 50vh;
+    left : 5vw;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.navDroite i {
+    font-size: 2rem;
+}
+
+/* Section expériences */
+
+.conteneurExperience {
+    width: 30%;
+    background-color: #504099c7;
+    border-radius: 50px;
+    padding: 40px;
+    gap: 20px;
+    cursor: url(assets/curseur-patoune.png) 50 50, pointer;
+    outline: none;
+    transition: all 0.5s ease;
+}
+
+.conteneurExperience:hover {
+    outline: 5px solid #FE7BE5;
+    scale: 1.05;
+    box-shadow: 10px 10px 15px black;
+}
+
+.conteneurExperience .userImage {
+    width: 35%;
+}
+
+.conteneurExperience .userImage img {
+    width: 100%;
+}
+
+.ux {
+    width: 50%;
+    gap: 10px;
+}
+
+.ux span {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Section Articles */
+
+.conteneurArticle {
+    background-color: #504099c7;
+    width: 100%;
+    border-radius: 20px;
+    padding: 0;
+}
+.articles>div {
+    gap: 30px;
+}
+
+.conteneurArticle img {
+    width: 40%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.txtArticle {
+    width: 55%;
+    padding: 40px;
+    align-content: space-between;
+}
+
+.txtArticle p {
+    margin-top: 8%;
+}
+
+/* Section Ils sont là ! */
+
+iframe {
+    width: 100%;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 2% 15%;
+    width: 100%;
+    gap: 20px;
+}
+
+/* PAGE TEMOIGNAGES */
+
+.temoignages {
+    background-color: #313866;
+}
+
+/* Hero Temoignages */
+
+
+.heroTemoignages {
+    height: fit-content;
+    gap: 10px;
+}
+
+.heroTemoignages h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.heroTemoignages p {
+    width: 100%;
+    text-align: center;
+}
+
+.heroTemoignages input {
+    width: 40%;
+    height: 2rem;
+    padding: 0 2%;
+    border-radius: 1rem 0 0 1rem;
+    border: none;
+}
+
+.cta {
+    width: 100%;
+}
+
+.boutonCta {
+    width: fit-content;
+    background-color: #FE7BE5;
+    padding: 0 2%;
+    font-size: 1rem;
+    height: 2rem;
+    border-radius: 0 1rem 1rem 0;
+}
+
+
+/* Section expériences témoignages */
+
+.experiencesTemoignages {
+    gap: 50px;
+}
+
+.temoignagesConteneurExperience {
+    width: 90%;
+    background-color: #504099;
+    padding: 2%;
+    border-radius: 30px;
+    gap: 20px;
+}
+
+.temoignagesConteneurExperience .userImage {
+    width: 100%;
+    gap: 20px;
+}
+
+.temoignagesConteneurExperience .userImage img {
+    width: 10%;
+    height: auto;
+}
+
+.textExp {
+    width: 65%;
+}
+
+.imgExp {
+    width: 30%;
+}
+
+.imgExp img {
+    width: 100%;
+}
+
+/* PAGE ARTICLES */
+
+.article {
+    background-color:#974EC3;
+}
+
+/* HERO ARTICLE */
+
+.heroArticle img {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    object-position: 0 20%;
+}
+
+.heroArticle div {
+    width: fit-content;
+    background-color: #974EC3;
+    position: absolute;
+    translate: -50%;
+    bottom: 0;
+    left: 50%;
+    margin: 0;
+    padding: 2% 5%;
+    border-radius: 50px 50px 0 0;
+}
+
+.heroArticle div h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+.heroArticle .bouton {
+    font-size: 2rem;
+}
+
+.contenu iframe {
+    width: 60%;
+}
+
+/* Section contenu */
+
+.contenu {
+    gap: 20px;
+    padding-top: 6%;
+}
+
+@media all and (max-width: 1440px) {
+    .index{
+        background-size: auto 100vh;
+    } 
+}
+@media all and (max-width: 1200px) {
+    .conteneurExperience{
+        width: 45%;
+        margin-bottom: 50px;
+    }
+}
+@media all and (max-width: 850px) {
+    h1{
+        font-size: 4rem;
+    }
+    .bouton{
+        font-size: 1.3rem;
+    }
+    .burger-none{
+        display: block;
+    }
+    header>nav{
+        display: none;
+    }
+    .experiences>div{
+        justify-content: center;
+    }
+    .conteneurExperience{
+        width: 90%;
+    }
+    .articles>div{
+        justify-content: center;
+    }
+    .conteneurArticle{
+        flex-direction: column;
+        width: 90%;
+    }
+    .conteneurArticle img{
+        width: 100%;
+    }
+    .heroTemoignages input {
+        width: 70%;
+    }
+    .txtArticle{
+        width: 100%;
+    }
+    .textExp{
+        width: 100%;
+        order: 2;
+    }
+    .imgExp{
+        width: 100%;
+    }
+}
